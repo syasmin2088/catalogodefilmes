@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Cadastro de Filme</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href ="../lib/bootstrap/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href ="../lib/css/filme.css"/>
+        <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css" type="text/css"/>
+        
+         
+     </head>
+    <body id="genero">
+
+        <header>
+            <nav id="menu" class="navbar navbar-inverse">  
+                <div class ="row">
+                    <div class="container">
+
+                        <ul>
+                            <li><a href="../html/home.html">Home</a></li>
+                            <li><a href="../html/cadastrodefilme.html">Cadastrar Filmes</a></li>
+                            <li><a href="../html/catalogo.html">Catalogo de A a Z</a></li>
+                            <li><a href="../html/catalogo.html">Sugestões</a></li> 
+
+
+                            <li class = "search">
+                                <div class="input-group">
+                                    <input type="search" class="form-control" placeholder="Pesquisar Filme...">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button">
+                                            <i class = "glyphicon glyphicon-search"></i>
+                                        </button>
+                                    </span> 
+                                </div><!-- /input-group -->
+
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>         
+
+        </header>
+
+        <form>
+
+            <div class="form-group">
+                <h4><b>Cadastro de Filmes</b></h4>
+                <label for ="nomefime">Título do Filme</label>
+                <input type="text"  class = "titulofilme" id="titulofilme"> 
+            </div>
+
+            
+            <div id ="genero" class ="div-select">
+                <label for="genero">Gênero</label>
+                <select>
+                    <option></option>
+                   
+                  </select>
+            
+
+            <div class="form-group">
+                <label for ="diretor">Diretor</label>
+                <input type="text" class ="diretor" id ="direct">
+
+            </div>
+
+            <div class = "form-group">
+                <label for="data">Data de Lançamento</label> 
+                <input type="date" class="data" id ="date">
+            </div>
+            <br>
+            
+            <div id="classificacao" class="div-select" >
+                <label for="classifica">Classificação Indicativa</label>
+                <select>
+                    
+                    <option></option>
+                    
+                </select>        
+
+            <div class = "form-group">
+                <label for="castlabel">Ator(a):</label>
+                 <input type="text" class="elenco" id ="cast">
+        
+            </div>
+                
+            <div class="form-group" id="aqui">
+                <label for="cast">Adicionar mais atores</label>   
+                <span class="input-group-btn">
+                    <button onclick="" class="btn btn-default" id="btnid" type="button">
+                        <i class ="glyphicon glyphicon-plus-sign"></i>
+                    </button>
+                </span> 
+            </div>
+
+            <div class="form-group">
+                <label for="imagem">Adicionar Imagem</label>
+                <br>
+                <input type="file" class="imagem" id="img">
+            </div>
+            <div>
+                <input type="submit"  class="btn btn-primary btn-lg" id="button">
+
+            </div>    
+
+        </form>
+
+        <script  src ="../lib/jquery/jquery-3.2.1.min.js"></script>
+        <script  src ="../lib/bootstrap/js/bootstrap.js"></script>
+
+    </body>
+
+</html>
