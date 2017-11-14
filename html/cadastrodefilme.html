@@ -4,6 +4,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+
 <html>
     <head>
         <title>Cadastro de Filme</title>
@@ -27,6 +28,7 @@ and open the template in the editor.
                             <li><a href="../html/cadastrodefilme.html">Cadastrar Filmes</a></li>
                             <li><a href="../html/catalogo.html">Catalogo de A a Z</a></li>
                             <li><a href="../html/catalogo.html">Sugestões</a></li> 
+                          
 
 
                             <li class = "search">
@@ -48,58 +50,82 @@ and open the template in the editor.
 
         </header>
 
-        <form>
-
-            <div class="form-group">
+        <form action = "../bd/filmebd.php" method ="post">
+            <div  class="form-group">
                 <h4><b>Cadastro de Filmes</b></h4>
                 <label for ="nomefime">Título do Filme</label>
-                <input type="text"  class = "titulofilme" id="titulofilme"> 
+                <input type="text"  class = "titulofilme" id="titulofilme" name ="titulo"> 
             </div>
 
-            
+          
             <div id ="genero" class ="div-select">
                 <label for="genero">Gênero</label>
-                <select>
-                    <option></option>
+                <select name = "genero" id= "generos">
+                    <option value ="Aventura">Aventura</option>
+                    <option value ="Ação">Ação</option>
+                    <option value ="Comédia">Comédia</option>
+                    <option value ="Drama">Drama</option>
+                    <option value ="Ficcao">Ficção</option>
+                    <option value ="Fantasia">Fantasia</option>
+                    <option value ="Musical">Musical</option>
+                    <option value =Policial>Policial</option>
+                    <option value =Suspense>Suspense</option>
+                    <option value =Terror>Terror</option>
+                    <option value =Thriller>Thriller</option>
+                    <option value =Western>Western</option>
+                    
+                    <script>
+                        
+                       var comboGenero = document.getElementById("genero");
+
+                        for (i=0; i< comboGenero.length; i++){
+    
+                        console.log(comboGenero.options[i]);
+                         </script>
                    
                   </select>
             
 
-            <div class="form-group">
+            <div class="form-group" >
                 <label for ="diretor">Diretor</label>
-                <input type="text" class ="diretor" id ="direct">
+                <input type="text" class ="diretor" id ="direct" name ="diretor">
 
             </div>
 
             <div class = "form-group">
                 <label for="data">Data de Lançamento</label> 
-                <input type="date" class="data" id ="date">
+                <input type="date" class="data" id ="date" name ="data">
             </div>
             <br>
             
             <div id="classificacao" class="div-select" >
                 <label for="classifica">Classificação Indicativa</label>
-                <select>
+                <select name ="classifica" id="classifica">
+                    <option value ="Livre">Livre</option>
+                    <option value ="10">10 anos</option>
+                    <option value ="12">12 anos</option>
+                    <option value ="14">14 anos</option>
+                    <option value ="16">16 anos</option>
+                    <option value ="18">18 anos</option>
                     
-                    <option></option>
+                    <script>
+                            
+                         var comboClassifica = document.getElementById("classifica");
+
+                          for (i=0; i< comboClassifica.length; i++){
+    
+                              console.log(comboClassifica.options[i]);
+                    </script>
                     
                 </select>        
 
             <div class = "form-group">
                 <label for="castlabel">Ator(a):</label>
-                 <input type="text" class="elenco" id ="cast">
+                 <input type="text" class="elenco" id ="cast" name ="ator">
         
             </div>
                 
-            <div class="form-group" id="aqui">
-                <label for="cast">Adicionar mais atores</label>   
-                <span class="input-group-btn">
-                    <button onclick="" class="btn btn-default" id="btnid" type="button">
-                        <i class ="glyphicon glyphicon-plus-sign"></i>
-                    </button>
-                </span> 
-            </div>
-
+        
             <div class="form-group">
                 <label for="imagem">Adicionar Imagem</label>
                 <br>

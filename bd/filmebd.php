@@ -7,22 +7,27 @@
  */
  
 include 'conection.php';
+include '../html/cadastrodefilme.html';
 
-class database{
 
-public function Inserir(){ 
+$sql = "INSERT INTO filme(titulo,desc_genero, diretor,data,desc_classifica,elenco)Values(:titulo,:desc_genero,:diretor,:data,:desc_classifica,:elenco )";
 
-$sql = "INSERT INTO ator(nome, data_nascimento)Values(:nome,:data_nascimento)";
-
-$nome = 'Tom Hardy';
-$datanasci = '19770915';
+$titulo = filter_input(INPUT_POST,'titulo',FILTER_SANITIZE_SPECIAL_CHARS);
+$genero = filter_input(INPUT_POST,'genero',FILTER_SANITIZE_SPECIAL_CHARS);
+$diretor = filter_input(INPUT_POST,'diretor',FILTER_SANITIZE_SPECIAL_CHARS);
+$data = filter_input(INPUT_POST,'data',FILTER_SANITIZE_SPECIAL_CHARS);
+$classifica = filter_input(INPUT_POST,'classifica',FILTER_SANITIZE_SPECIAL_CHARS);
+$ator = filter_input(INPUT_POST,'ator',FILTER_SANITIZE_SPECIAL_CHARS);
 
 
 $con = conection::getInstance();
-$stmt = $con -> prepare($sql);
-$stmt->bindParam( ':nome', $nome );
-$stmt->bindParam( ':data_nascimento', $datanasci );
-
+$stmt = $con -> prepare($sql);  
+$stmt->bindParam( ':titulo', $titulo );
+$stmt->bindParam( ':desc_genero', $genero);
+$stmt->bindParam( ':diretor', $diretor);
+$stmt->bindParam( ':data', $data);
+$stmt->bindParam( ':desc_classifica', $classifica);
+$stmt->bindParam( ':elenco', $ator);
  $result = $stmt ->execute();
 
 if (! $result )
@@ -30,26 +35,6 @@ if (! $result )
     var_dump( $stmt->errorInfo() );
     exit;
 }
-}
-
-public function Deletar () {
-       
-}
 
 
-public function Editar(){
-    
-}
 
-
- 
-public function Listar(){
-    
-} 
- 
- 
- public function Pesquisar(){
-     
- }
-
-}
